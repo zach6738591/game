@@ -1,0 +1,2 @@
+# Placeholder for future third-party libraries.
+# The current prototype relies on the Python standard library only.

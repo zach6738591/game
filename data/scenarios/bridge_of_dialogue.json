@@ -1,0 +1,360 @@
+{
+  "metadata": {
+    "id": "bridge_of_dialogue",
+    "title": "Bridge of Dialogue",
+    "fictional_location": "Varna River Cultural Quarter, Kosovo",
+    "summary": "Safeguard a cross-community cultural festival in Kosovo while coordinating Serbian and Kosovar security liaisons, humanitarian relief, and transparent communications.",
+    "content_warning": "Fictional depiction of civic unrest, multinational peace support, and humanitarian coordination."
+  },
+  "configuration": {
+    "duration_minutes": 45,
+    "time_step": 1,
+    "initial_seed": 2025,
+    "accessibility": {
+      "high_contrast": true,
+      "verbose_events": true
+    }
+  },
+  "factions": [
+    {
+      "id": "kosovo_civil_security",
+      "name": "Kosovo Civil Security",
+      "role": "Stabilize the festival, protect civilians, coordinate with NGOs.",
+      "initial_morale": 68,
+      "initial_trust": {
+        "kosovo_security_force": 68,
+        "serbian_gendarmerie": 55,
+        "serbian_defense_liaison": 48,
+        "local_serb_community": 52,
+        "kfor": 70,
+        "ngo_media": 80
+      },
+      "resources": {
+        "medical": 3,
+        "communications": 4,
+        "relief": 2,
+        "mediation": 3
+      }
+    },
+    {
+      "id": "kosovo_security_force",
+      "name": "Kosovo Security Force Liaison",
+      "role": "Coordinate defensive posture with humanitarian priorities and support local authorities.",
+      "initial_morale": 65,
+      "initial_trust": {
+        "kosovo_civil_security": 72,
+        "serbian_gendarmerie": 50,
+        "serbian_defense_liaison": 50,
+        "local_serb_community": 53,
+        "kfor": 74,
+        "ngo_media": 68
+      },
+      "resources": {
+        "medical": 2,
+        "communications": 3,
+        "relief": 2,
+        "mediation": 3
+      }
+    },
+    {
+      "id": "serbian_gendarmerie",
+      "name": "Serbian State Gendarmerie",
+      "role": "Ensure community safety, uphold oversight agreements.",
+      "initial_morale": 62,
+      "initial_trust": {
+        "kosovo_civil_security": 50,
+        "kosovo_security_force": 46,
+        "serbian_defense_liaison": 70,
+        "local_serb_community": 65,
+        "kfor": 58,
+        "ngo_media": 48
+      },
+      "resources": {
+        "medical": 2,
+        "communications": 3,
+        "relief": 1,
+        "mediation": 2
+      }
+    },
+    {
+      "id": "serbian_defense_liaison",
+      "name": "Serbian Defense Liaison Regiment",
+      "role": "Coordinate defensive units with humanitarian access and dialogue channels.",
+      "initial_morale": 64,
+      "initial_trust": {
+        "serbian_gendarmerie": 72,
+        "kosovo_civil_security": 47,
+        "kosovo_security_force": 45,
+        "local_serb_community": 68,
+        "kfor": 60,
+        "ngo_media": 44
+      },
+      "resources": {
+        "medical": 2,
+        "communications": 3,
+        "relief": 2,
+        "mediation": 3
+      }
+    },
+    {
+      "id": "local_serb_community",
+      "name": "Local Serb Community Council",
+      "role": "Organize peaceful participation, counter misinformation, support humanitarian outreach.",
+      "initial_morale": 74,
+      "initial_trust": {
+        "kosovo_civil_security": 54,
+        "kosovo_security_force": 50,
+        "serbian_gendarmerie": 68,
+        "serbian_defense_liaison": 70,
+        "kfor": 60,
+        "ngo_media": 72
+      },
+      "resources": {
+        "medical": 1,
+        "communications": 4,
+        "relief": 3,
+        "mediation": 4
+      }
+    },
+    {
+      "id": "kfor",
+      "name": "KFOR Peace Support",
+      "role": "Maintain neutral oversight, ensure humanitarian corridors remain open.",
+      "initial_morale": 70,
+      "initial_trust": {
+        "kosovo_civil_security": 68,
+        "kosovo_security_force": 65,
+        "serbian_gendarmerie": 63,
+        "serbian_defense_liaison": 62,
+        "local_serb_community": 62,
+        "ngo_media": 75
+      },
+      "resources": {
+        "medical": 4,
+        "communications": 3,
+        "relief": 3,
+        "mediation": 5
+      }
+    },
+    {
+      "id": "ngo_media",
+      "name": "NGO & Media Coalition",
+      "role": "Deliver aid, document events, promote constructive dialogue.",
+      "initial_morale": 80,
+      "initial_trust": {
+        "kosovo_civil_security": 72,
+        "kosovo_security_force": 66,
+        "serbian_gendarmerie": 50,
+        "serbian_defense_liaison": 48,
+        "local_serb_community": 78,
+        "kfor": 77
+      },
+      "resources": {
+        "medical": 5,
+        "communications": 5,
+        "relief": 6,
+        "mediation": 4
+      }
+    }
+  ],
+  "crowd": {
+    "population": 920,
+    "initial_state_distribution": {
+      "calm": 0.62,
+      "concerned": 0.24,
+      "agitated": 0.12,
+      "panicked": 0.02
+    },
+    "density_hotspots": [
+      {"name": "Festival Stage", "intensity": 0.8, "position": [0.40, 0.74]},
+      {"name": "Bridge Walkway", "intensity": 0.6, "position": [0.55, 0.55]},
+      {"name": "Aid Pavilion", "intensity": 0.5, "position": [0.35, 0.46]}
+    ]
+  },
+  "map": {
+    "zones": [
+      {
+        "name": "North Bank Cultural Plaza",
+        "type": "civic",
+        "polygon": [[0.18, 0.64], [0.42, 0.63], [0.48, 0.76], [0.16, 0.80]]
+      },
+      {
+        "name": "Festival Stage Grounds",
+        "type": "market",
+        "polygon": [[0.28, 0.72], [0.48, 0.72], [0.52, 0.86], [0.30, 0.86]]
+      },
+      {
+        "name": "River Walkway",
+        "type": "river",
+        "polygon": [[0.16, 0.54], [0.84, 0.52], [0.80, 0.60], [0.20, 0.62]]
+      },
+      {
+        "name": "South Bank Market",
+        "type": "residential",
+        "polygon": [[0.58, 0.60], [0.86, 0.58], [0.88, 0.76], [0.60, 0.78]]
+      },
+      {
+        "name": "Humanitarian Hub",
+        "type": "aid",
+        "polygon": [[0.30, 0.40], [0.46, 0.40], [0.48, 0.52], [0.32, 0.52]]
+      }
+    ],
+    "corridors": [
+      {"name": "Humanitarian Lane", "path": [[0.26, 0.82], [0.52, 0.80], [0.78, 0.72]]},
+      {"name": "Dialogue Bridge", "path": [[0.48, 0.50], [0.52, 0.45], [0.60, 0.42]]}
+    ],
+    "points_of_interest": [
+      {"name": "Varna Bridge", "position": [0.52, 0.48]},
+      {"name": "Aid Pavilion", "position": [0.34, 0.46]},
+      {"name": "Media Terrace", "position": [0.62, 0.38]}
+    ]
+  },
+  "event_deck": [
+    {
+      "id": "rumor_surge",
+      "name": "Rumor Surge",
+      "minute": 6,
+      "type": "information",
+      "impact": {
+        "crowd_state_shift": {"concerned": 0.08, "agitated": 0.04},
+        "trust_delta": {"local_serb_community": -3, "kosovo_civil_security": -2},
+        "media_visibility": 2
+      },
+      "recommended_responses": [
+        "Dispatch community liaison to provide verified updates",
+        "Coordinate joint statement with NGO observers"
+      ]
+    },
+    {
+      "id": "weather_shift",
+      "name": "Weather Shift",
+      "minute": 15,
+      "type": "environment",
+      "impact": {
+        "crowd_state_shift": {"concerned": 0.05},
+        "logistics_cost": {"relief": 1},
+        "media_visibility": 1
+      },
+      "recommended_responses": [
+        "Deploy shelter canopies via humanitarian resources",
+        "Adjust crowd flow signage"
+      ]
+    },
+    {
+      "id": "fringe_banner",
+      "name": "Fringe Banner Attempt",
+      "minute": 18,
+      "type": "escalation",
+      "impact": {
+        "crowd_state_shift": {"agitated": 0.07},
+        "trust_delta": {"serbian_gendarmerie": -4, "kosovo_civil_security": -3},
+        "media_visibility": 3
+      },
+      "recommended_responses": [
+        "Empower volunteer marshals to intervene peacefully",
+        "Open dialogue circle highlighting shared festival goals"
+      ]
+    },
+    {
+      "id": "joint_bridge_patrol",
+      "name": "Joint Bridge Patrol",
+      "minute": 22,
+      "type": "coordination",
+      "impact": {
+        "trust_delta": {
+          "kosovo_security_force": 4,
+          "serbian_defense_liaison": 4,
+          "kfor": 3
+        },
+        "media_visibility": 2
+      },
+      "recommended_responses": [
+        "Highlight joint safety briefing to media",
+        "Invite community marshals to observe patrol handover"
+      ]
+    },
+    {
+      "id": "dialogue_panel",
+      "name": "Dialogue Panel Spotlight",
+      "minute": 30,
+      "type": "diplomatic",
+      "impact": {
+        "trust_delta": {
+          "kosovo_civil_security": 5,
+          "serbian_gendarmerie": 5,
+          "serbian_defense_liaison": 4,
+          "local_serb_community": 6
+        },
+        "media_visibility": 4
+      },
+      "recommended_responses": [
+        "Ensure humanitarian corridor remains clear",
+        "Share transparent briefing with media coalition"
+      ]
+    },
+    {
+      "id": "logistics_airlift",
+      "name": "Logistics Airlift Support",
+      "minute": 34,
+      "type": "logistics",
+      "impact": {
+        "trust_delta": {"ngo_media": 3},
+        "media_visibility": 3
+      },
+      "recommended_responses": [
+        "Coordinate joint press update on aid delivery",
+        "Document civilian-first distribution priorities"
+      ]
+    }
+  ],
+  "unit_groups": [
+    {
+      "name": "KCS Unity Patrol",
+      "faction": "kosovo_civil_security",
+      "posture": "Protective Escort",
+      "strength": 3,
+      "position": [0.32, 0.52],
+      "description": "Coordinates festival perimeter and supports evacuation lanes."
+    },
+    {
+      "name": "Kosovo Liaison Battalion",
+      "faction": "kosovo_security_force",
+      "posture": "Humanitarian Standby",
+      "strength": 4,
+      "position": [0.45, 0.65],
+      "description": "Assists with logistics bridging and emergency support."
+    },
+    {
+      "name": "Serbian Community Assurance Team",
+      "faction": "serbian_gendarmerie",
+      "posture": "Dialogue Patrol",
+      "strength": 3,
+      "position": [0.68, 0.48],
+      "description": "Escorts community marshals near the bridge approach."
+    },
+    {
+      "name": "Serbian Liaison Regiment Detail",
+      "faction": "serbian_defense_liaison",
+      "posture": "Stabilization Support",
+      "strength": 4,
+      "position": [0.75, 0.65],
+      "description": "Coordinates humanitarian logistics convoys from the Serbian side."
+    },
+    {
+      "name": "KFOR Mediation Unit",
+      "faction": "kfor",
+      "posture": "Observation",
+      "strength": 3,
+      "position": [0.55, 0.35],
+      "description": "Oversees ceasefire commitments and de-escalation protocols."
+    },
+    {
+      "name": "NGO Media Hub",
+      "faction": "ngo_media",
+      "posture": "Aid & Reporting",
+      "strength": 2,
+      "position": [0.40, 0.30],
+      "description": "Coordinates aid distribution and press pool logistics."
+    }
+  ]
+}
